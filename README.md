@@ -1,7 +1,7 @@
 # Primer-servicio-web-SpringBoot
 Esta es una aplicacion donde se hizo la creacion de un CRUD para JAVA por medio del framework Spring Boot.
 
--------------------------------------------------------------------Commit description--------------------------------------------------------------------
+---------------------------------------Commit description-----------------------------------
 > Commit 1: Comenzare a completar la aplicacion segun los requerimientos de la evaluacion desde el final del video 2.
 > Commit 2: Se Creo el README.
 > Commit 3: Con la funcionalidad agregada para actualizar se puede actualizar la persona a la cual seleccionaste por medio de su ID y cambiar todos sus parametros.
