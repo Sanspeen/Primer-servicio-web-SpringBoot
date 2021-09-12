@@ -5,6 +5,7 @@ import com.sofkaU.crudPersona.servicios.InterfasSerivciosPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 //El controlador solicita a los servicios.
 
 
@@ -18,18 +19,25 @@ public class ControladorPersona {
     //Obtener todos
     @GetMapping(value = "/listarPersonas")
     public Iterable<Persona> ListarPersonas(){
-        return servicio.listar();
+        try {
+            return servicio.listar();
+
+        }catch (Error e){
+            return (Iterable<Persona>) e;
+        }
     }
 
     //Crear
     @PostMapping(value = "/guardarPersonas")
     public Persona guardarPersonas(@RequestBody Persona persona){
-        return servicio.guardar(persona);
+            return servicio.guardar(persona);
     }
 
     //Actualizar por ID
     @PostMapping("/actualizarPersonas")
-    public Persona actualizarPersonas(@RequestBody Persona persona){return servicio.actualizar(persona);}
+    public Persona actualizarPersonas(@RequestBody Persona persona){
+        return servicio.actualizar(persona);
+    }
 
     //Obtener por ID
     @GetMapping(path = "/{id}")
