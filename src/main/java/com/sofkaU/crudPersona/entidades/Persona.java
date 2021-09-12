@@ -2,13 +2,13 @@ package com.sofkaU.crudPersona.entidades;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="persona")
+@Entity //Lo declara como entidad.
+@Table(name="persona")//En caso tal de no existir la tabla persona, la creará.
 public class Persona {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+    @Id //Determina el tipo de la variable para que lo reconozca como ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//Genera el valor en caso de no recibirlo
+    @Column(unique = true, nullable = false)//Esto verifica que sea un valor unico e irrepetible y encima que no pueda ser nulo.
     private Integer id;
     private String nombre;
     private String edad;

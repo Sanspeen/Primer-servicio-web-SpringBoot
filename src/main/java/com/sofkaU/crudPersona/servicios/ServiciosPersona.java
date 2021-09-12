@@ -4,9 +4,10 @@ import com.sofkaU.crudPersona.entidades.Persona;
 import com.sofkaU.crudPersona.repositorio.InterfasRepositorioPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+//Los servicios solicitan a el repositorio.
+
 
 @Service
 public class ServiciosPersona implements InterfasSerivciosPersona {
