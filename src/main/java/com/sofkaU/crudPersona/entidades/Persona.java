@@ -8,6 +8,7 @@ public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Integer id;
     private String nombre;
     private String edad;

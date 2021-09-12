@@ -5,14 +5,16 @@ import com.sofkaU.crudPersona.servicios.InterfasSerivciosPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.PostUpdate;
+
 @RestController
-@RequestMapping("api")
+@RequestMapping("API")
 public class ControladorPersona {
 
     @Autowired
     private InterfasSerivciosPersona servicio;
 
-    @GetMapping(value = "/ListarPersonas")
+    @GetMapping(value = "/listarPersonas")
     public Iterable<Persona> ListarPersonas(){
         return servicio.listar();
     }
@@ -22,5 +24,9 @@ public class ControladorPersona {
         return servicio.guardar(persona);
     }
 
+    @PostMapping("/actualizarPersonas")
+    public Persona actualizarPersonas(@RequestBody Persona persona){
+        return servicio.actualizar(persona);
+    }
 
 }
