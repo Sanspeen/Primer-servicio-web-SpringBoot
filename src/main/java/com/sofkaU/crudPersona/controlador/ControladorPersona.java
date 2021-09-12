@@ -5,7 +5,7 @@ import com.sofkaU.crudPersona.servicios.InterfasSerivciosPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.PostUpdate;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("API")
@@ -25,8 +25,10 @@ public class ControladorPersona {
     }
 
     @PostMapping("/actualizarPersonas")
-    public Persona actualizarPersonas(@RequestBody Persona persona){
-        return servicio.actualizar(persona);
-    }
+    public Persona actualizarPersonas(@RequestBody Persona persona){return servicio.actualizar(persona);}
 
+    @GetMapping(path = "/{id}")
+    public Optional<Persona> listarPersonasPorID(@PathVariable("id") int id){
+        return servicio.listarID(id);
+    }
 }
